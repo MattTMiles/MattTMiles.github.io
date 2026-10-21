@@ -1,10 +1,13 @@
 ---
 layout: page
-title: Software
+title: Software & Data
 permalink: /software/
-lede: Open-source tools for pulsar timing and gravitational-wave analysis.
-description: Open-source pulsar timing software by Matthew T. Miles, including JUG, a JAX-based GPU pulsar timing package.
+lede: Open-source tools and public data releases for pulsar timing and gravitational-wave analysis.
+description: >-
+  Open-source pulsar timing software and public pulsar timing array data by Matt Miles (Matthew T. Miles),
+  including JUG, ATLAS, and the MeerKAT and Parkes Pulsar Timing Array data releases.
 ---
+<h2>Software</h2>
 <div class="grid-cards">
   <div class="card">
     <h3><a href="https://github.com/MattTMiles/jug">JUG</a></h3>
@@ -20,16 +23,26 @@ description: Open-source pulsar timing software by Matthew T. Miles, including J
     (NUTS, HMC-within-Gibbs), using JUG for the non-linear timing model.</p>
     <p><a href="https://github.com/PTAGlobalFitters/Atlas">GitHub</a></p>
   </div>
+  <!-- Add more software: copy a <div class="card"> block. -->
+</div>
+
+<h2>Data</h2>
+<div class="grid-cards">
   <div class="card">
-    <h3>MPTA data products</h3>
-    <p>Arrival times, timing models and calibrated pulsar archives from the MeerKAT Pulsar Timing Array data releases.</p>
-    <!-- TODO: link the public data DOI(s) for each release -->
+    <h3>MeerKAT Pulsar Timing Array</h3>
+    <p>Sub-banded arrival times, timing models, noise models and calibrated pulsar archives from the MPTA data releases.</p>
     <ul class="stack">
-      <li><a href="https://arxiv.org/abs/2212.04648">First data release</a></li>
-      <li><a href="https://arxiv.org/abs/2412.01148">4.5-yr data release</a></li>
+      <li><a href="https://doi.org/10.26185/6392814b27073">First data release</a> · <a href="https://arxiv.org/abs/2212.04648">paper</a></li>
+      <li><a href="https://doi.org/10.57891/j0vh-5g31">4.5-yr data release</a> · <a href="https://arxiv.org/abs/2412.01148">paper</a></li>
       <li>6.5-yr data release <em>(in prep.)</em></li>
     </ul>
   </div>
-  <!-- TODO: add cards for other public tools you want to highlight, e.g. SCULPT once public,
-       or contributions to discovery / enterprise / PINT. Copy a <div class="card"> block. -->
+  <div class="card">
+    <h3>Parkes Pulsar Timing Array</h3>
+    <p>Calibrated profiles, flux-density dynamic spectra, wide-band templates, arrival times and timing models for 32
+    millisecond pulsars observed with Murriyang, the Parkes radio telescope, over up to 18 years.</p>
+    <ul class="stack">
+      <li>Third data release: <a href="https://doi.org/10.25919/w0nw-jt05">part 1</a> · <a href="https://doi.org/10.25919/23wj-1d69">part 2</a> · <a href="https://arxiv.org/abs/2306.16230">paper</a></li>
+    </ul>
+  </div>
 </div>
