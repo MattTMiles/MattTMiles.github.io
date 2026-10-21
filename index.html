@@ -36,17 +36,8 @@ description: >-
   </div>
 </section>
 
-<section aria-labelledby="news">
-  <h2 id="news">News</h2>
-  <ul class="news">
-    {% for n in site.data.news limit: 6 %}
-    <li><time datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ n.date | date: "%b %Y" }}</time><div>{{ n.text | markdownify | remove: "<p>" | remove: "</p>" }}</div></li>
-    {% endfor %}
-  </ul>
-</section>
-
 <section aria-labelledby="recent">
-  <h2 id="recent">Recent first-author papers</h2>
-  {% include paper-list.html role="first" limit=3 %}
+  <h2 id="recent">Recent papers</h2>
+  {% include paper-list.html limit=5 %}
   <p style="margin-top:1rem"><a href="{{ '/publications/' | relative_url }}">All publications →</a></p>
 </section>

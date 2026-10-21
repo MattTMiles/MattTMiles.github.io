@@ -6,17 +6,13 @@ description: Publications by Matthew T. Miles on pulsar timing, pulsar emission 
 ---
 {%- assign shown = site.data.papers | where_exp: "p", "p.hide != true" -%}
 {%- assign nf = shown | where: "role", "first" | size -%}
-{%- assign ns = shown | where: "role", "significant" | size -%}
-{%- assign nc = shown | where: "role", "collaboration" | size -%}
-<p class="lede">{{ shown | size }} papers: {{ nf }} first-author, {{ ns }} with a significant contribution, and {{ nc }} collaboration papers.
+{%- assign nc = shown | where: "role", "coauthor" | size -%}
+<p class="lede">{{ shown | size }} papers: {{ nf }} as first author and {{ nc }} as co-author.
 Full and up-to-date lists are on
 {% if site.links.ads != "" %}<a href="{{ site.links.ads }}">NASA ADS</a>{% endif %}{% if site.links.google_scholar != "" %} and <a href="{{ site.links.google_scholar }}">Google Scholar</a>{% endif %}.</p>
 
 <h2>First author <span class="count">({{ nf }})</span></h2>
 {% include paper-list.html role="first" full=true %}
 
-<h2>Significant contribution <span class="count">({{ ns }})</span></h2>
-{% include paper-list.html role="significant" full=true %}
-
-<h2>Collaboration papers <span class="count">({{ nc }})</span></h2>
-{% include paper-list.html role="collaboration" full=true %}
+<h2>Co-author <span class="count">({{ nc }})</span></h2>
+{% include paper-list.html role="coauthor" full=true %}

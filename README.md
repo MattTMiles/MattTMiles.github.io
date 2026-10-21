@@ -6,7 +6,7 @@ Personal website of Matthew T. Miles. Plain Jekyll, built by GitHub Pages — no
 
 | Page | File | Content from |
 |---|---|---|
-| Home | `index.html` | `_config.yml` (`author:`), `_data/news.yml`, `_data/papers.yml` |
+| Home | `index.html` | `_config.yml` (`author:`), `_data/papers.yml` |
 | Research | `research.html` | text in the file + `_data/papers.yml` sidebar |
 | Publications | `publications.html` | `_data/papers.yml` |
 | Software | `software.html` | text in the file |
@@ -19,9 +19,9 @@ Search the repo for `TODO` to find everything that still needs your details.
 
 - **Profile links** (Scholar, ADS, ORCID, GitHub, …): `_config.yml` → `links:`. Empty = hidden.
 - **Headshot**: add `assets/img/matthew-miles-astronomer.jpg` (square, ≥ 400 px) and set `author.headshot` and `image` in `_config.yml`.
-- **News**: add an item to the top of `_data/news.yml`.
-- **Papers**: `python3 tools/update_papers.py` pulls everything from arXiv. Then fix by hand in `_data/papers.yml`:
-  `"role"` = `first` / `significant` / `collaboration`, `"hide": true` to drop a paper. Hand edits survive re-runs.
+- **Papers**: `python3 tools/update_papers.py` pulls the list from arXiv and journal/volume/year from Crossref.
+  Hand edits in `_data/papers.yml` that survive re-runs: `"role": "first"` / `"coauthor"`, `"hide": true`,
+  and `"fix": {"year": 2025, "doi": "..."}` to override any field (e.g. add a DOI arXiv doesn't know).
 
 ## Preview locally
 
@@ -62,6 +62,6 @@ The site already has page titles and descriptions, Open Graph tags, `sitemap.xml
 3. **Fill in Scholar and ORCID** in `_config.yml`. They become `sameAs` links, which helps Google build a knowledge panel for you.
 4. **Use one name consistently.** Use "Matthew T. Miles" everywhere. The middle initial is what separates you from the other Matt Miles online.
 5. **Add a real headshot** with a descriptive filename. Google Images is often where people find you first.
-6. **Keep it alive.** Add a news item for each paper or talk. Updated sites get crawled more often.
+6. **Keep it alive.** Re-run `tools/update_papers.py` when you have new papers. Updated sites get crawled more often.
 
 Expect about 1–4 weeks after Search Console submission before a search for your name shows the site near the top.
