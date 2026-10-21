@@ -4,16 +4,10 @@ title: Curriculum Vitae
 permalink: /cv/
 description: >-
   Curriculum vitae of Matt Miles (Matthew T. Miles), postdoctoral research fellow at Vanderbilt University:
-  education, positions, awards, collaborations, talks and publications.
+  positions, education and awards.
 ---
-{%- comment -%}
-  The download button appears automatically once assets/cv/Miles_CV.pdf exists.
-  Talks: _data/talks.yml. Membership & roles: _data/roles.yml. Papers: _data/papers.yml.
-{%- endcomment -%}
-{%- assign cv_pdf = site.static_files | where: "path", "/assets/cv/Miles_CV.pdf" | first -%}
+{%- comment -%} Full CV lives at assets/cv/Miles_CV.pdf — replace that file to update it. {%- endcomment -%}
 <div class="cv">
-  {% if cv_pdf %}<p class="cv-actions"><a class="btn" href="{{ '/assets/cv/Miles_CV.pdf' | relative_url }}">Download CV (PDF)</a></p>{% endif %}
-
   <h2>Positions</h2>
   <dl>
     <dt>Jan 2025 – present</dt><dd>Postdoctoral Research Fellow, Vanderbilt University</dd>
@@ -40,44 +34,6 @@ description: >-
     <dt>2018</dt><dd>Winning design, International Medical Express UAV Challenge</dd>
   </dl>
 
-  <h2>Research interests</h2>
-  <ul class="bullets">
-    <li>Improving pulsar timing and pulsar timing arrays, including novel methods such as profile-domain and simultaneous polarisation timing.</li>
-    <li>The nature of the stochastic gravitational-wave background.</li>
-    <li>Black holes, neutron stars and pulsars and their intrinsic properties, e.g. constraints on the nuclear equation of state and tests of gravity.</li>
-    <li>Modelling noise sources, both common and uncommon to sources in the gravitational-wave frequency band.</li>
-    <li>The impact of model misspecification.</li>
-    <li>Single sources of gravitational waves.</li>
-    <li>Population modelling of supermassive black-hole binaries.</li>
-  </ul>
-
-  <h2>Membership &amp; roles</h2>
-  {% include roles.html dates=true %}
-
-  <h2>Selected talks</h2>
-  <dl>
-    {%- for t in site.data.talks %}
-    <dt>{{ t.date | date: "%b %Y" }}</dt><dd>{{ t.title }}<small>{{ t.venue }}</small></dd>
-    {%- endfor %}
-  </dl>
-
-  <h2>Outreach &amp; service</h2>
-  <dl>
-    <dt>Aug 2022 – Sep 2023</dt><dd>AstroTour Coordinator, Swinburne University of Technology</dd>
-    <dt>Oct 2017 – Oct 2018</dt><dd>President, Society of Arts Students, Monash University</dd>
-  </dl>
-
-  <h2>Other experience</h2>
-  <dl>
-    <dt>Feb 2021 – Jul 2022</dt><dd>Data Scientist, Eloque</dd>
-    <dt>Jun 2018 – Feb 2020</dt><dd>Associate Consultant, JVAT Consulting</dd>
-    <dt>Sep 2018 – Dec 2019</dt><dd>Propulsion Engineer, High Powered Rocketry team, Monash University</dd>
-    <dt>Mar – Nov 2019</dt><dd>Final-year Honours project, Aerospace Engineering, Monash University</dd>
-    <dt>Jun 2019</dt><dd>Machine Learning and the Future of Australia's Energy Requirements, Monash University</dd>
-    <dt>Dec 2017 – Feb 2018</dt><dd>Astrophysics research project, Monash School of Physics &amp; Astronomy</dd>
-  </dl>
-
-  <h2>First-author publications</h2>
-  {% include paper-list.html role="first" %}
-  <p style="margin-top:1rem"><a href="{{ '/publications/' | relative_url }}">Full publication list →</a></p>
+  <p class="cv-more"><a class="btn" href="{{ '/assets/cv/Miles_CV.pdf' | relative_url }}">Full CV (PDF)</a>
+  <span>Research interests, collaborations, talks, outreach and the full publication list.</span></p>
 </div>

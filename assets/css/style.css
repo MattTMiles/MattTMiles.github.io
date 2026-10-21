@@ -188,3 +188,5 @@ main { padding-top: 2.5rem; padding-bottom: 4rem; }
 .cv ul.bullets li { margin-bottom: .4rem; }
 .intro ul { color: var(--muted); margin: -.4rem 0 1rem; padding-left: 1.3rem; }
 .intro li { margin-bottom: .15rem; }
+.cv-more { margin-top: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; }
+.cv-more span { color: var(--muted); font-size: .95rem; }
