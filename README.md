@@ -26,7 +26,7 @@ Search the repo for `TODO` to find everything that still needs your details.
 ## Preview locally
 
 ```bash
-mamba run -n jekyll jekyll serve --livereload
+conda activate jekyll && jekyll serve --livereload
 ```
 
 Then open http://localhost:4000.
