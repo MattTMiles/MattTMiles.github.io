@@ -34,7 +34,7 @@ Then open http://localhost:4000.
 ## Deploy
 
 1. Create a **public** repo on GitHub named exactly `MattTMiles.github.io`.
-2. `git remote add origin git@github.com:MattTMiles/MattTMiles.github.io.git && git push -u origin main`
+2. `git remote add origin https://github.com/MattTMiles/MattTMiles.github.io.git && git push -u origin main`
 3. Repo → Settings → Pages → Source: *Deploy from a branch*, `main`, `/ (root)`.
 4. Site appears at https://matttmiles.github.io within a minute or two.
 
