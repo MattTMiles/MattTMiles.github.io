@@ -1,6 +1,6 @@
 # matttmiles.github.io
 
-Personal website of Matthew T. Miles. Plain Jekyll, built by GitHub Pages — no build step or Actions needed.
+Personal website of Matthew T. Miles. Plain Jekyll, built and deployed by one GitHub Action (`.github/workflows/site.yml`).
 
 ## Pages
 
@@ -19,9 +19,18 @@ Search the repo for `TODO` to find everything that still needs your details.
 
 - **Profile links** (Scholar, ADS, ORCID, GitHub, …): `_config.yml` → `links:`. Empty = hidden.
 - **Headshot**: add `assets/img/matthew-miles-astronomer.jpg` (square, ≥ 400 px) and set `author.headshot` and `image` in `_config.yml`.
-- **Papers**: `python3 tools/update_papers.py` pulls the list from arXiv and journal/volume/year from Crossref.
-  Hand edits in `_data/papers.yml` that survive re-runs: `"role": "first"` / `"coauthor"`, `"hide": true`,
-  and `"fix": {"year": 2025, "doi": "..."}` to override any field (e.g. add a DOI arXiv doesn't know).
+- **Papers update themselves.** The site workflow (`.github/workflows/site.yml`) runs every Monday,
+  and you can also start it from the repo's *Actions* tab. It runs `tools/update_papers.py`, which:
+  - finds your papers on arXiv;
+  - finds each journal version on Crossref, including papers whose arXiv entry has no DOI. A match needs a
+    near-identical title (ignoring UK/US spelling and PTA/GW abbreviations), a "Miles" on the author list, and a
+    publication date after the arXiv posting;
+  - fills in the journal, volume, page and year (MNRAS January issues get the volume year, matching ADS);
+  - commits `_data/papers.yml` if anything changed, then rebuilds and redeploys the site.
+
+  You can also run it locally: `python3 tools/update_papers.py`. Hand edits in `_data/papers.yml` survive re-runs:
+  `"role": "first"` / `"coauthor"`, `"hide": true` (not your paper), and `"fix": {"doi": "...", "year": 2025}`
+  to override any field.
 
 ## Preview locally
 
@@ -35,7 +44,7 @@ Then open http://localhost:4000.
 
 1. Create a **public** repo on GitHub named exactly `MattTMiles.github.io`.
 2. `git remote add origin https://github.com/MattTMiles/MattTMiles.github.io.git && git push -u origin main`
-3. Repo → Settings → Pages → Source: *Deploy from a branch*, `main`, `/ (root)`.
+3. Repo → Settings → Pages → Source: **GitHub Actions**. The first deploy runs automatically on the push (see the *Actions* tab).
 4. Site appears at https://matttmiles.github.io within a minute or two.
 
 A `username.github.io` address must match the GitHub username, so `mattmiles.github.io` would need a GitHub account called `mattmiles`.
@@ -62,6 +71,6 @@ The site already has page titles and descriptions, Open Graph tags, `sitemap.xml
 3. **Fill in Scholar and ORCID** in `_config.yml`. They become `sameAs` links, which helps Google build a knowledge panel for you.
 4. **Use one name consistently.** Use "Matthew T. Miles" everywhere. The middle initial is what separates you from the other Matt Miles online.
 5. **Add a real headshot** with a descriptive filename. Google Images is often where people find you first.
-6. **Keep it alive.** Re-run `tools/update_papers.py` when you have new papers. Updated sites get crawled more often.
+6. **Keep it alive.** The weekly paper update does this for you. Updated sites get crawled more often.
 
 Expect about 1–4 weeks after Search Console submission before a search for your name shows the site near the top.
