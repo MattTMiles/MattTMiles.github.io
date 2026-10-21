@@ -41,9 +41,9 @@ collaborations:
 
 # Profile links. Leave a value empty ("") to hide it everywhere.
 links:
-  google_scholar: ""   # TODO e.g. https://scholar.google.com/citations?user=XXXXXXXX
+  google_scholar: "https://scholar.google.com/citations?user=9YRwljUAAAAJ"
   ads: "https://ui.adsabs.harvard.edu/search/q=author%3A%22Miles%2C%20Matthew%20T.%22&sort=date%20desc"
-  orcid: ""            # TODO e.g. https://orcid.org/0000-0000-0000-0000
+  orcid: "https://orcid.org/0000-0002-5455-3474"
   arxiv: "https://arxiv.org/search/?searchtype=author&query=Miles%2C+Matthew+T"   # or your arxiv.org/a/<id> page if you have one
   github: "https://github.com/MattTMiles"
   linkedin: ""
