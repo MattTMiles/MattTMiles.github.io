@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+      <nav aria-label="Main">
+        <ul>
+          {% for item in site.nav %}
+          <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }} · {{ site.author.affiliation }}</span>
+      {% include profile-links.html compact=true %}
+    </div>
+  </footer>
+</body>
+</html>

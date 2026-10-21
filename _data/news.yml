@@ -1,0 +1,12 @@
+# Newest first. `text` is Markdown. Keep 4–8 items; old ones can be deleted.
+# TODO: check dates/wording — drafted from public listings.
+- date: 2026-10-26
+  text: Seminar at Princeton on the state of pulsar timing array science (NANOGrav, MPTA and IPTA).
+- date: 2026-08-27
+  text: "Released **JUG**, a JAX-based, GPU-capable pulsar timing package — [paper](https://arxiv.org/abs/2608.27786), [code](https://github.com/MattTMiles/jug)."
+- date: 2026-04-20
+  text: Seminar at the UWM Center for Gravitation, Cosmology & Astrophysics on the MeerKAT Pulsar Timing Array.
+- date: 2025-12-09
+  text: "Awarded the Astronomical Society of Australia's **Charlene Heisler Prize** for the most outstanding PhD thesis in astronomy ([Vanderbilt news](https://as.vanderbilt.edu/viper/2025/12/09/matthew-miles-awarded-the-charlene-heisler-prize-for-the-most-outstanding-ph-d-thesis-in-astronomy))."
+- date: 2024-12-02
+  text: "MeerKAT Pulsar Timing Array 4.5-year data release and first gravitational-wave search published — [data release](https://arxiv.org/abs/2412.01148), [GW search](https://arxiv.org/abs/2412.01153)."

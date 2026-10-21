@@ -1,0 +1,52 @@
+---
+layout: default
+description: >-
+  Matthew T. Miles (Matt Miles) is an astronomer at Vanderbilt University studying
+  pulsar timing, pulsar emission and nanohertz gravitational waves with NANOGrav,
+  the MeerKAT Pulsar Timing Array and the IPTA.
+---
+<section class="hero">
+  <img class="headshot" src="{{ site.author.headshot | relative_url }}" alt="Photo of Matthew T. Miles" width="240" height="240">
+  <div>
+    <h1>Matthew T. Miles</h1>
+    <p class="role">{{ site.author.job_title }}, <a href="{{ site.author.affiliation_url }}">{{ site.author.affiliation }}</a></p>
+    <ul class="tags" aria-label="Collaborations">
+      <li>NANOGrav</li>
+      <li>MeerKAT Pulsar Timing Array</li>
+      <li>IPTA</li>
+      <li>OzGrav</li>
+    </ul>
+    {% include profile-links.html %}
+  </div>
+</section>
+
+<section aria-labelledby="about">
+  <h2 id="about">About</h2>
+  <div class="blurb">
+    <!-- TODO: replace this placeholder with your own blurb (2–3 short paragraphs).
+         Tip for search: keep your full name, "astronomer", "pulsar timing" and
+         "gravitational waves" in the first paragraph. -->
+    <div class="placeholder">
+      <p><strong>Placeholder.</strong> I'm an astronomer and postdoctoral researcher at Vanderbilt University, where I use
+      millisecond pulsars as a galaxy-sized gravitational-wave detector. My work spans precision pulsar timing,
+      the emission physics of pulsars, and searches for nanohertz gravitational waves with pulsar timing arrays.</p>
+      <p>I completed my PhD at Swinburne University of Technology, where I led the first data releases of the
+      MeerKAT Pulsar Timing Array. <em>— write your own here.</em></p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="news">
+  <h2 id="news">News</h2>
+  <ul class="news">
+    {% for n in site.data.news limit: 6 %}
+    <li><time datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ n.date | date: "%b %Y" }}</time><div>{{ n.text | markdownify | remove: "<p>" | remove: "</p>" }}</div></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section aria-labelledby="recent">
+  <h2 id="recent">Recent first-author papers</h2>
+  {% include paper-list.html role="first" limit=3 %}
+  <p style="margin-top:1rem"><a href="{{ '/publications/' | relative_url }}">All publications →</a></p>
+</section>

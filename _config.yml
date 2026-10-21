@@ -1,0 +1,79 @@
+# ---------------------------------------------------------------------------
+# Site settings — edit these first.
+# ---------------------------------------------------------------------------
+title: Matthew T. Miles
+tagline: Astronomer — pulsar timing & gravitational waves
+description: >-
+  Matthew T. Miles (Matt Miles) is an astronomer and postdoctoral researcher at
+  Vanderbilt University working on pulsar timing arrays, pulsar emission, and
+  nanohertz gravitational waves with NANOGrav, the MeerKAT Pulsar Timing Array,
+  and the IPTA.
+# If you buy a custom domain (recommended, see README), put it here and in CNAME.
+url: "https://matttmiles.github.io"
+baseurl: ""
+lang: en_US
+
+author:
+  name: Matthew T. Miles
+  short_name: Matt Miles
+  job_title: Postdoctoral Researcher in Astrophysics
+  affiliation: Vanderbilt University
+  affiliation_url: https://www.vanderbilt.edu/physics/
+  group: VIPER — Vanderbilt Initiative for Gravitational-wave Research   # TODO check exact name
+  group_url: https://as.vanderbilt.edu/viper/
+  phd: Swinburne University of Technology
+  email: TODO@vanderbilt.edu            # TODO: work email shown on Contact page
+  location: Nashville, Tennessee, USA
+  # Replace with a real photo (square, ≥400 px, .jpg) and update this path.
+  headshot: /assets/img/headshot-placeholder.svg
+
+# Profile links. Leave a value empty ("") to hide it everywhere.
+links:
+  google_scholar: ""   # TODO e.g. https://scholar.google.com/citations?user=XXXXXXXX
+  ads: "https://ui.adsabs.harvard.edu/search/q=author%3A%22Miles%2C%20Matthew%20T.%22&sort=date%20desc"
+  orcid: ""            # TODO e.g. https://orcid.org/0000-0000-0000-0000
+  arxiv: "https://arxiv.org/search/?searchtype=author&query=Miles%2C+Matthew+T"   # or your arxiv.org/a/<id> page if you have one
+  github: "https://github.com/MattTMiles"
+  linkedin: ""
+  bluesky: ""
+  twitter: ""
+
+# Google Search Console: paste the content="..." value of the verification meta tag.
+google_site_verification: ""
+
+# jekyll-seo-tag
+image: /assets/img/headshot-placeholder.svg   # TODO: point at your real headshot .jpg
+social:
+  name: Matthew T. Miles
+  links:
+    - https://github.com/MattTMiles
+
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: pretty
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+nav:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: Software
+    url: /software/
+  - title: CV
+    url: /cv/
+  - title: Contact
+    url: /contact/
+
+exclude:
+  - README.md
+  - tools/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

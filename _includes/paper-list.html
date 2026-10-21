@@ -1,0 +1,26 @@
+{%- comment -%}
+  Paper list from _data/papers.yml.
+  include.role  = first | significant | collaboration | (empty for all)
+  include.roles = comma list, e.g. "first,significant"
+  include.limit = max items
+  include.full  = true -> year column + link row (Publications page)
+{%- endcomment -%}
+{%- assign items = site.data.papers | where_exp: "p", "p.hide != true" -%}
+{%- if include.role -%}{%- assign items = items | where: "role", include.role -%}{%- endif -%}
+{%- if include.roles -%}{%- assign wanted = include.roles | split: "," -%}{%- assign items = items | where_exp: "p", "wanted contains p.role" -%}{%- endif -%}
+{%- assign limit = include.limit | default: 999 -%}
+<ol class="papers{% if include.full %} full{% endif %}"{% if include.full %} reversed{% endif %}>
+  {%- for p in items limit: limit -%}
+  {%- if p.doi != "" -%}{%- capture href -%}https://doi.org/{{ p.doi }}{%- endcapture -%}{%- else -%}{%- capture href -%}https://arxiv.org/abs/{{ p.arxiv }}{%- endcapture -%}{%- endif -%}
+  <li>
+    {%- if include.full -%}<span class="y">{{ p.year }}</span>{%- endif -%}
+    <div>
+      <a class="t" href="{{ href }}">{{ p.title }}</a>
+      <span class="m">{{ p.authors | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% unless include.full %} · {{ p.year }}{% endunless %}{% if p.venue != "" %} · <em>{{ p.venue }}</em>{% endif %}</span>
+      {%- if include.full -%}
+      <span class="links"><a href="https://arxiv.org/abs/{{ p.arxiv }}">arXiv</a>{% if p.doi != "" %}<a href="https://doi.org/{{ p.doi }}">Journal</a>{% endif %}<a href="https://ui.adsabs.harvard.edu/abs/arXiv:{{ p.arxiv }}">ADS</a></span>
+      {%- endif -%}
+    </div>
+  </li>
+  {%- endfor -%}
+</ol>

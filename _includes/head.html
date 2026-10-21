@@ -1,0 +1,36 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {% if site.google_site_verification != "" %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
+  <meta name="author" content="{{ site.author.name }}">
+  <meta name="keywords" content="Matthew Miles, Matt Miles, Matthew T. Miles, astronomer, astrophysics, pulsar timing, pulsar timing array, gravitational waves, NANOGrav, MeerKAT, MPTA, IPTA, Vanderbilt">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% if page.url == "/" %}
+  {%- comment -%} Person structured data: tells Google this site is about you and links your profiles. {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "alternateName": ["Matt Miles", "Matthew Miles", "M. T. Miles"],
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "image": "{{ site.url }}{{ site.baseurl }}{{ site.author.headshot }}",
+    "jobTitle": "{{ site.author.job_title }}",
+    "description": "{{ site.description | strip_newlines | strip }}",
+    "worksFor": { "@type": "CollegeOrUniversity", "name": "{{ site.author.affiliation }}", "url": "{{ site.author.affiliation_url }}" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "{{ site.author.phd }}" },
+    "award": "Charlene Heisler Prize, Astronomical Society of Australia (2025)",
+    "knowsAbout": ["Pulsar timing", "Pulsar timing arrays", "Gravitational waves", "Pulsar emission", "Radio astronomy", "Bayesian inference"],
+    "sameAs": [
+      {%- assign first = true -%}
+      {%- for l in site.links -%}{%- if l[1] != "" -%}{%- unless first -%},{%- endunless -%}"{{ l[1] }}"{%- assign first = false -%}{%- endif -%}{%- endfor -%}
+    ]
+  }
+  </script>
+  {% endif %}
+</head>
