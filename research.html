@@ -2,106 +2,117 @@
 layout: page
 title: Research
 permalink: /research/
-lede: I use millisecond pulsars — the most stable natural clocks known — to study the pulsars themselves and to search for gravitational waves with light-year wavelengths.
 description: >-
-  Research by Matthew T. Miles on pulsar timing arrays, pulsar emission and
-  nanohertz gravitational waves, including the MeerKAT Pulsar Timing Array and NANOGrav.
+  Research by Matt Miles (Matthew T. Miles) on precision pulsar timing, pulsar emission, nanohertz
+  gravitational waves, pulsar timing software and future pulsar timing arrays.
 ---
 {%- comment -%}
-  Each research area: heading, optional figure, 1–3 short paragraphs, key papers.
-  Figures: drop images into assets/img/research/ and update the src. ~1200x520 px works well.
-  TODO: all text below is a draft written from your paper list — edit freely.
+  Each research area: heading, figure, (optional description), key papers.
+  Figures live in assets/img/research/. To add a description, put <p>...</p> after the figure.
 {%- endcomment -%}
+<div class="prose intro">
+  <p>I mainly work with millisecond pulsars, nature's best clocks, to see what makes them tick and to take a look at
+  stretching spacetime, measuring the imprint of inspiraling supermassive black hole binaries.</p>
+  <p>I want to: time pulsars more precisely, understand why they do what they do, and measure gravitational waves with
+  them. To help out I've spent time writing software that lets people do this, and I look into next-generation
+  telescopes to predict what happens next.</p>
+</div>
+
 <div class="two-col">
   <div>
     <ul class="toc" aria-label="Research areas">
       <li><a href="#timing">Pulsar timing</a></li>
       <li><a href="#emission">Pulsar emission</a></li>
       <li><a href="#gw">Gravitational waves</a></li>
-      <li><a href="#software">Software &amp; methods</a></li>
+      <li><a href="#software">Software &amp; inference</a></li>
       <li><a href="#future">Future arrays</a></li>
     </ul>
 
     <section class="area" id="timing">
       <h2>Precision pulsar timing</h2>
       <figure>
-        <img src="{{ '/assets/img/research/placeholder-timing.svg' | relative_url }}" alt="Placeholder for a pulsar timing figure" loading="lazy">
-        <figcaption>TODO: replace with a figure, e.g. timing residuals of an MPTA pulsar.</figcaption>
+        <img src="{{ '/assets/img/research/j1909-residuals.png' | relative_url }}" alt="Timing residuals and noise realisations of PSR J1909−3744 from the MeerKAT Pulsar Timing Array" loading="lazy" width="1200" height="1200">
+        <figcaption>Timing residuals and noise-process realisations of PSR J1909−3744 from the
+        <a href="https://arxiv.org/abs/2412.01148">MPTA 4.5-year data release</a>.</figcaption>
       </figure>
-      <p>Millisecond pulsars spin hundreds of times a second with a regularity that rivals atomic clocks. By predicting the arrival
-      time of every pulse to within tens of nanoseconds over years, we can measure the pulsar's spin, orbit and position — and
-      anything else that perturbs the signal on its way to Earth.</p>
-      <p>I led the first data releases of the <strong>MeerKAT Pulsar Timing Array</strong> (MPTA), which times 88 southern millisecond
-      pulsars roughly every two weeks with the MeerKAT radio telescope in South Africa. A large part of this work is noise modelling:
-      separating intrinsic spin noise, dispersion and scattering in the interstellar medium, the solar wind, and instrumental effects
-      from the signals we are looking for. I also contribute to noise modelling for the NANOGrav and Parkes Pulsar Timing Array data sets.</p>
       <p class="keypapers">Key papers:
         <a href="https://arxiv.org/abs/2212.04648">MPTA first data release</a> ·
-        <a href="https://arxiv.org/abs/2412.01148">MPTA 4.5-yr data release</a> ·
+        <a href="https://arxiv.org/abs/2412.01148">MPTA 4.5-yr data release &amp; noise</a> ·
         <a href="https://arxiv.org/abs/2603.23817">Transdimensional noise modelling</a> ·
-        <a href="https://arxiv.org/abs/2606.28571">NANOGrav chromatic noise</a> ·
-        <a href="https://arxiv.org/abs/2511.03185">Scattering variations</a></p>
+        <a href="https://arxiv.org/abs/2606.28571">NANOGrav chromatic noise models</a> ·
+        <a href="https://arxiv.org/abs/2606.28554">Chromatic noise and GW analyses</a> ·
+        <a href="https://arxiv.org/abs/2511.03185">Scattering variations</a> ·
+        <a href="https://arxiv.org/abs/2607.09004">Heliospheric modelling for the MPTA</a> ·
+        <a href="https://arxiv.org/abs/2306.16229">PPTA noise null hypothesis</a> ·
+        <a href="https://arxiv.org/abs/2306.16230">PPTA third data release</a> ·
+        <a href="https://arxiv.org/abs/2211.12924">Wideband timing of PPTA UWL data</a> ·
+        <a href="https://arxiv.org/abs/2401.06963">MPTA parallaxes &amp; proper motions</a> ·
+        <a href="https://arxiv.org/abs/2212.04051">Shapiro delay in seven binaries</a></p>
     </section>
 
     <section class="area" id="emission">
       <h2>Pulsar emission</h2>
       <figure>
-        <img src="{{ '/assets/img/research/placeholder-emission.svg' | relative_url }}" alt="Placeholder for a pulse profile figure" loading="lazy">
-        <figcaption>TODO: replace with a figure, e.g. the two emission modes of PSR J1909−3744.</figcaption>
+        <img src="{{ '/assets/img/research/pulse-profile-fit.png' | relative_url }}" alt="Pulse profiles before and after a profile-change event, fitted with a fixed template and a flexible model" loading="lazy" width="1600" height="724">
+        <figcaption>Pulse profiles through a profile-change event, compared with a fixed template and a flexible
+        profile model (in prep.).</figcaption>
       </figure>
-      <p>The best-timed pulsars are not perfectly steady: their pulse shapes jitter from one rotation to the next, switch between
-      emission modes, and vary with observing frequency. These changes limit timing precision, but they are also a window into
-      how and where pulsars emit radio waves.</p>
-      <p>I discovered mode changing in <strong>PSR J1909−3744</strong>, the most precisely timed pulsar known, and work on measuring
-      and modelling profile variability, pulse jitter, flux-density variations and glitches across the MeerKAT millisecond pulsar
-      population — and on timing methods that account for them.</p>
       <p class="keypapers">Key papers:
         <a href="https://arxiv.org/abs/2112.00897">Mode changing in J1909−3744</a> ·
         <a href="https://arxiv.org/abs/2204.04115">MeerTime PTA emission census</a> ·
         <a href="https://arxiv.org/abs/2401.03660">Chromatic jitter in J0437−4715</a> ·
         <a href="https://arxiv.org/abs/2304.02793">Dynamic pulse fitting</a> ·
-        <a href="https://arxiv.org/abs/2309.07564">Flux densities of 89 MSPs</a></p>
+        <a href="https://arxiv.org/abs/2309.07564">Flux densities of 89 MSPs</a> ·
+        <a href="https://arxiv.org/abs/2511.11336">A glitch in MSP J0900−3144</a></p>
     </section>
 
     <section class="area" id="gw">
       <h2>Nanohertz gravitational waves</h2>
-      <figure>
-        <img src="{{ '/assets/img/research/placeholder-gw.svg' | relative_url }}" alt="Placeholder for a gravitational-wave figure" loading="lazy">
-        <figcaption>TODO: replace with a figure, e.g. the Hellings–Downs correlation or an MPTA sky map.</figcaption>
+      <figure class="bare">
+        <img src="{{ '/assets/img/research/hd-curves.png' | relative_url }}" alt="Hellings–Downs correlation measurements from the MPTA, NANOGrav and PPTA" loading="lazy" width="1970" height="1064">
+        <figcaption>Hellings–Downs correlations measured by the
+        <a href="https://arxiv.org/abs/2412.01153">MPTA</a>,
+        <a href="https://arxiv.org/abs/2306.16213">NANOGrav</a> and
+        <a href="https://arxiv.org/abs/2306.16215">PPTA</a>.</figcaption>
       </figure>
-      <p>Gravitational waves with periods of years — most likely from supermassive black-hole binaries in the centres of
-      merging galaxies — stretch and squeeze the space between Earth and each pulsar. A pulsar timing array looks for the
-      correlated pattern this imprints on the arrival times of pulses from many pulsars across the sky.</p>
-      <p>I led the first search for gravitational waves with MeerKAT, which found a common signal consistent with the
-      gravitational-wave background in only 4.5 years of data. I also work on mapping the gravitational-wave sky and its
-      anisotropy, searching for individual supermassive black-hole binaries, and combining data sets through the
-      <strong>International Pulsar Timing Array</strong>.</p>
       <p class="keypapers">Key papers:
         <a href="https://arxiv.org/abs/2412.01153">First MeerKAT GW search</a> ·
         <a href="https://arxiv.org/abs/2412.01214">MPTA gravitational-wave sky maps</a> ·
+        <a href="https://arxiv.org/abs/2601.13957">Optimising GW sky maps</a> ·
+        <a href="https://arxiv.org/abs/2608.09781">PTA sensitivity to anisotropy</a> ·
         <a href="https://arxiv.org/abs/2609.32306">NANOGrav limits on resolvable binaries</a> ·
-        <a href="https://arxiv.org/abs/2309.00693">IPTA comparison of PTA results</a></p>
+        <a href="https://arxiv.org/abs/2309.00693">IPTA comparison of PTA results</a> ·
+        <a href="https://arxiv.org/abs/2306.16215">PPTA GW background search</a> ·
+        <a href="https://arxiv.org/abs/2107.12112">PPTA common-spectrum process</a> ·
+        <a href="https://arxiv.org/abs/2305.04464">Toward robust nanohertz GW detections</a></p>
     </section>
 
     <section class="area" id="software">
       <h2>Software &amp; fast inference</h2>
-      <p>Pulsar timing arrays now hold millions of arrival times, and analysing them is increasingly limited by compute.
-      I develop <a href="{{ '/software/' | relative_url }}"><strong>JUG</strong></a>, a JAX-based, GPU-capable pulsar timing package
-      that runs the whole pipeline — clock corrections, timing models, noise and deterministic signals — more than 50 times faster
-      than PINT while agreeing with it at the picosecond level. I also build GPU-accelerated Bayesian noise and signal analyses.</p>
-      <p class="keypapers">Key papers:
+      <figure>
+        <img src="{{ '/assets/img/research/jug-gui.png' | relative_url }}" alt="The JUG graphical interface showing pre-fit and post-fit residuals of a simulated PSR J1909−3744 dataset" loading="lazy" width="1600" height="1286">
+        <figcaption>The <a href="https://github.com/MattTMiles/jug">JUG</a> GUI on a simulated PSR J1909−3744 dataset,
+        from the <a href="https://arxiv.org/abs/2608.27786">JUG paper</a>.</figcaption>
+      </figure>
+      <p class="keypapers">Key papers &amp; code:
         <a href="https://arxiv.org/abs/2608.27786">JUG: JAX-based Unified pulsar timinG</a> ·
-        <a href="https://github.com/MattTMiles/jug">Code on GitHub</a></p>
+        <a href="https://github.com/MattTMiles/jug">JUG on GitHub</a> ·
+        <a href="https://github.com/PTAGlobalFitters/Atlas">ATLAS on GitHub</a> ·
+        <a href="https://arxiv.org/abs/2603.23817">Transdimensional noise sampling</a></p>
     </section>
 
     <section class="area" id="future">
       <h2>Designing future arrays</h2>
-      <p>Telescope time is the scarcest resource in pulsar timing. I work on how best to spend it — which pulsars to observe,
-      how often and for how long — for MeerKAT today and for the <strong>SKA Observatory</strong> pulsar timing array to come.</p>
+      <figure>
+        <img src="{{ '/assets/img/research/future-arrays-snr.png' | relative_url }}" alt="Projected optimal-statistic signal-to-noise of the gravitational-wave background for current and future pulsar timing arrays, 2005–2060" loading="lazy" width="1600" height="1049">
+        <figcaption>Projected optimal-statistic S/N of the gravitational-wave background for current and next-generation
+        pulsar timing arrays, and their IPTA combination.</figcaption>
+      </figure>
       <p class="keypapers">Key papers:
         <a href="https://arxiv.org/abs/2505.02524">A simple optimisation for the MPTA</a> ·
         <a href="https://arxiv.org/abs/2510.03139">Towards precision timing with SKA-Mid</a> ·
-        <a href="https://arxiv.org/abs/2607.03059">The SKAO Pulsar Timing Array</a></p>
+        <a href="https://arxiv.org/abs/2512.16163">The SKAO Pulsar Timing Array (OJAp)</a> ·
+        <a href="https://arxiv.org/abs/2607.03059">The SKAO PTA (AASKA II)</a></p>
     </section>
   </div>
 
