@@ -1,0 +1,14 @@
+# Membership & Roles — shown on the home page and the CV. `url` is optional.
+- name: MeerKAT Pulsar Timing Array (MPTA)
+  url: https://mpta-gw.github.io/
+  roles: One of the collaboration leaders.
+- name: NANOGrav
+  url: https://nanograv.org/
+  roles: Full member. Leader of the advanced modeling project. Co-lead of the continuous gravitational wave search.
+- name: International Pulsar Timing Array (IPTA)
+  url: https://ipta4gw.org/
+  roles: Co-lead of the Gravitational Wave Analysis working group. One of the leaders of the third data release.
+- name: Parkes Pulsar Timing Array (PPTA)
+  roles: Member.
+- name: Gamma-ray Pulsar Timing Array
+  roles: Member.

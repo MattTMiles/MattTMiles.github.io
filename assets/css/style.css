@@ -174,3 +174,11 @@ main { padding-top: 2.5rem; padding-bottom: 4rem; }
 .intro p { color: var(--muted); }
 .area figure.bare img { border: 0; background: none; }
 .keypapers a { white-space: normal; }
+
+.roles { list-style: none; padding: 0; margin: 0; max-width: 68ch; }
+.roles li { display: grid; grid-template-columns: 1fr; gap: .15rem; padding: .7rem 0; border-top: 1px solid var(--line); }
+.roles li:last-child { border-bottom: 1px solid var(--line); }
+.roles .org { font-weight: 600; }
+.roles .org a { color: var(--ink); text-decoration: none; }
+.roles .org a:hover { color: var(--accent); }
+.roles .what { color: var(--muted); }

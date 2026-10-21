@@ -24,8 +24,7 @@ author:
   phd: Swinburne University of Technology
   email: matthew.t.miles@vanderbilt.edu
   location: Nashville, Tennessee, USA
-  # Replace with a real photo (square, ≥400 px, .jpg) and update this path.
-  headshot: /assets/img/headshot-placeholder.svg
+  headshot: /assets/img/matthew-miles-astronomer.jpg
 
 # Collaboration badges on the home page.
 collaborations:
@@ -55,7 +54,12 @@ links:
 google_site_verification: ""
 
 # jekyll-seo-tag
-image: /assets/img/headshot-placeholder.svg   # TODO: point at your real headshot .jpg
+# Social-preview image (link cards on Slack, X, etc.) for every page
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/matt-miles-og.jpg
 social:
   name: Matt Miles
   links:

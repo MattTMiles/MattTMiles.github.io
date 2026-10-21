@@ -1,0 +1,6 @@
+{%- comment -%} Membership & roles from _data/roles.yml {%- endcomment -%}
+<ul class="roles">
+  {%- for r in site.data.roles %}
+  <li><span class="org">{% if r.url %}<a href="{{ r.url }}">{{ r.name }}</a>{% else %}{{ r.name }}{% endif %}</span><span class="what">{{ r.roles }}</span></li>
+  {%- endfor %}
+</ul>
