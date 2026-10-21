@@ -1,8 +1,8 @@
 # ---------------------------------------------------------------------------
 # Site settings — edit these first.
 # ---------------------------------------------------------------------------
-title: Matthew T. Miles
-tagline: Astronomer — pulsar timing & gravitational waves
+title: Matt Miles
+tagline: Matthew T. Miles, astronomer — pulsar timing & gravitational waves
 description: >-
   Matthew T. Miles (Matt Miles) is an astronomer and postdoctoral researcher at
   Vanderbilt University working on pulsar timing arrays, pulsar emission, and
@@ -22,10 +22,23 @@ author:
   group: VIPER — Vanderbilt Initiative for Gravitational-wave Research   # TODO check exact name
   group_url: https://as.vanderbilt.edu/viper/
   phd: Swinburne University of Technology
-  email: TODO@vanderbilt.edu            # TODO: work email shown on Contact page
+  email: matthew.t.miles@vanderbilt.edu
   location: Nashville, Tennessee, USA
   # Replace with a real photo (square, ≥400 px, .jpg) and update this path.
   headshot: /assets/img/headshot-placeholder.svg
+
+# Collaboration badges on the home page.
+collaborations:
+  - name: NANOGrav
+    url: https://nanograv.org/
+  - name: MPTA
+    url: https://mpta-gw.github.io/
+  - name: IPTA
+    url: https://ipta4gw.org/
+  - name: OzGrav
+    url: https://www.ozgrav.org/
+  - name: VIPER
+    url: https://as.vanderbilt.edu/viper/
 
 # Profile links. Leave a value empty ("") to hide it everywhere.
 links:
@@ -44,7 +57,7 @@ google_site_verification: ""
 # jekyll-seo-tag
 image: /assets/img/headshot-placeholder.svg   # TODO: point at your real headshot .jpg
 social:
-  name: Matthew T. Miles
+  name: Matt Miles
   links:
     - https://github.com/MattTMiles
 
