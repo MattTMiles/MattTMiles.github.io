@@ -148,7 +148,8 @@ main { padding-top: 2.5rem; padding-bottom: 4rem; }
 .btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--accent); color: var(--bg); padding: .55rem 1rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: .95rem; }
 .btn:hover { opacity: .9; }
 .cv dl { display: grid; grid-template-columns: 1fr; gap: .2rem 1.5rem; margin: 0; }
-@media (min-width: 640px) { .cv dl { grid-template-columns: 9rem 1fr; } }
+@media (min-width: 640px) { .cv dl { grid-template-columns: 10.5rem 1fr; } }
+.cv dt { white-space: nowrap; }
 .cv dt { color: var(--muted); font-variant-numeric: tabular-nums; font-size: .92rem; padding-top: .1rem; }
 .cv dd { margin: 0 0 .9rem; }
 .cv dd small { color: var(--muted); display: block; }
@@ -182,3 +183,8 @@ main { padding-top: 2.5rem; padding-bottom: 4rem; }
 .roles .org a { color: var(--ink); text-decoration: none; }
 .roles .org a:hover { color: var(--accent); }
 .roles .what { color: var(--muted); }
+.roles .since { font-weight: 400; color: var(--muted); font-size: .88rem; margin-left: .4rem; }
+.cv ul.bullets { margin: 0; padding-left: 1.2rem; max-width: 70ch; }
+.cv ul.bullets li { margin-bottom: .4rem; }
+.intro ul { color: var(--muted); margin: -.4rem 0 1rem; padding-left: 1.3rem; }
+.intro li { margin-bottom: .15rem; }

@@ -1,6 +1,6 @@
-{%- comment -%} Membership & roles from _data/roles.yml {%- endcomment -%}
+{%- comment -%} Membership & roles from _data/roles.yml. include.dates=true shows "since" (CV). {%- endcomment -%}
 <ul class="roles">
   {%- for r in site.data.roles %}
-  <li><span class="org">{% if r.url %}<a href="{{ r.url }}">{{ r.name }}</a>{% else %}{{ r.name }}{% endif %}</span>{% for x in r.roles %}<span class="what">{{ x }}</span>{% endfor %}</li>
+  <li><span class="org">{% if r.url %}<a href="{{ r.url }}">{{ r.name }}</a>{% else %}{{ r.name }}{% endif %}{% if include.dates and r.since %} <span class="since">since {{ r.since }}</span>{% endif %}</span>{% for x in r.roles %}<span class="what">{{ x }}</span>{% endfor %}</li>
   {%- endfor %}
 </ul>

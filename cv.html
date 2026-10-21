@@ -2,50 +2,79 @@
 layout: page
 title: Curriculum Vitae
 permalink: /cv/
-description: Curriculum vitae of Matthew T. Miles, astronomer at Vanderbilt University.
+description: >-
+  Curriculum vitae of Matt Miles (Matthew T. Miles), postdoctoral research fellow at Vanderbilt University:
+  education, positions, awards, collaborations, talks and publications.
 ---
 {%- comment -%}
-  TODO: everything marked TODO needs your details. Drop your PDF at assets/cv/Miles_CV.pdf.
+  The download button appears automatically once assets/cv/Miles_CV.pdf exists.
+  Talks: _data/talks.yml. Membership & roles: _data/roles.yml. Papers: _data/papers.yml.
 {%- endcomment -%}
+{%- assign cv_pdf = site.static_files | where: "path", "/assets/cv/Miles_CV.pdf" | first -%}
 <div class="cv">
-  <p class="cv-actions"><a class="btn" href="{{ '/assets/cv/Miles_CV.pdf' | relative_url }}">Download CV (PDF)</a></p>
+  {% if cv_pdf %}<p class="cv-actions"><a class="btn" href="{{ '/assets/cv/Miles_CV.pdf' | relative_url }}">Download CV (PDF)</a></p>{% endif %}
 
   <h2>Positions</h2>
   <dl>
-    <dt>2025 – present</dt><dd>Postdoctoral Research Fellow, Vanderbilt University<small>Group of Stephen R. Taylor · TODO: fellowship name / start date</small></dd>
-    <dt>TODO – 2025</dt><dd>Postdoctoral Researcher, Swinburne University of Technology &amp; OzGrav<small>TODO: confirm</small></dd>
+    <dt>Jan 2025 – present</dt><dd>Postdoctoral Research Fellow, Vanderbilt University</dd>
+    <dt>Sep 2023 – Dec 2024</dt><dd>Postdoctoral Research Fellow, Swinburne University of Technology / OzGrav</dd>
   </dl>
 
   <h2>Education</h2>
   <dl>
-    <dt>TODO</dt><dd>PhD, Astrophysics — Swinburne University of Technology<small>Thesis: TODO title · Supervisors: TODO</small></dd>
-    <dt>TODO</dt><dd>Bachelor of Aerospace Engineering &amp; Bachelor of Science — Monash University</dd>
+    <dt>Mar 2020 – Jul 2024</dt><dd>PhD (Doctor of Astrophysics), Swinburne University of Technology
+      <small>Thesis: <em>Millisecond pulsar timing and gravitational wave searches with the MeerKAT radio telescope</em></small>
+      <small>Supervisors: A/Prof. Ryan Shannon, Prof. Matthew Bailes &amp; Dr Daniel Reardon</small></dd>
+    <dt>Mar 2014 – Nov 2019</dt><dd>Bachelor of Aerospace Engineering (Honours) and Science, Monash University
+      <small>Majors: Aerospace Engineering, Applied Mathematics, Astrophysics</small></dd>
   </dl>
 
   <h2>Awards &amp; honours</h2>
   <dl>
-    <dt>2025</dt><dd>Charlene Heisler Prize — most outstanding PhD thesis in astronomy, Astronomical Society of Australia</dd>
-    <dt>TODO</dt><dd>TODO: scholarships, fellowships, telescope-time awards</dd>
+    <dt>2025</dt><dd>Charlene Heisler Prize, Astronomical Society of Australia
+      <small>For the most outstanding PhD thesis in astronomy or a closely related field accepted by an Australian university.</small></dd>
+    <dt>PhD</dt><dd>Ranked in the 99th percentile of Australian astronomers by h-index as a PhD student
+      <small>Per the statistics of Pimbblet et al. (2011).</small></dd>
+    <dt>2019</dt><dd>2nd and 4th place, Australian Universities Rocketry Competition
+      <small>30,000 ft and 10,000 ft categories, respectively.</small></dd>
+    <dt>2018</dt><dd>Winning design, International Medical Express UAV Challenge</dd>
   </dl>
 
+  <h2>Research interests</h2>
+  <ul class="bullets">
+    <li>Improving pulsar timing and pulsar timing arrays, including novel methods such as profile-domain and simultaneous polarisation timing.</li>
+    <li>The nature of the stochastic gravitational-wave background.</li>
+    <li>Black holes, neutron stars and pulsars and their intrinsic properties, e.g. constraints on the nuclear equation of state and tests of gravity.</li>
+    <li>Modelling noise sources, both common and uncommon to sources in the gravitational-wave frequency band.</li>
+    <li>The impact of model misspecification.</li>
+    <li>Single sources of gravitational waves.</li>
+    <li>Population modelling of supermassive black-hole binaries.</li>
+  </ul>
+
   <h2>Membership &amp; roles</h2>
-  {% include roles.html %}
+  {% include roles.html dates=true %}
 
   <h2>Selected talks</h2>
   <dl>
-    <dt>Oct 2026</dt><dd>Seminar, Princeton University — the state of pulsar timing array science</dd>
-    <dt>Apr 2026</dt><dd>CGCA Seminar, University of Wisconsin–Milwaukee — the MeerKAT Pulsar Timing Array</dd>
-    <dt>TODO</dt><dd>TODO: conference talks (IPTA, ASA, AAS, …)</dd>
+    {%- for t in site.data.talks %}
+    <dt>{{ t.date | date: "%b %Y" }}</dt><dd>{{ t.title }}<small>{{ t.venue }}</small></dd>
+    {%- endfor %}
   </dl>
 
-  <h2>Mentoring, teaching &amp; service</h2>
+  <h2>Outreach &amp; service</h2>
   <dl>
-    <dt>TODO</dt><dd>TODO: students co-supervised, teaching, referee work, committees, outreach</dd>
+    <dt>Aug 2022 – Sep 2023</dt><dd>AstroTour Coordinator, Swinburne University of Technology</dd>
+    <dt>Oct 2017 – Oct 2018</dt><dd>President, Society of Arts Students, Monash University</dd>
   </dl>
 
-  <h2>Outreach &amp; media</h2>
+  <h2>Other experience</h2>
   <dl>
-    <dt>TODO</dt><dd>Articles for <a href="https://www.livescience.com/author/matthew-miles">Live Science</a> / The Conversation · TODO: interviews and public talks</dd>
+    <dt>Feb 2021 – Jul 2022</dt><dd>Data Scientist, Eloque</dd>
+    <dt>Jun 2018 – Feb 2020</dt><dd>Associate Consultant, JVAT Consulting</dd>
+    <dt>Sep 2018 – Dec 2019</dt><dd>Propulsion Engineer, High Powered Rocketry team, Monash University</dd>
+    <dt>Mar – Nov 2019</dt><dd>Final-year Honours project, Aerospace Engineering, Monash University</dd>
+    <dt>Jun 2019</dt><dd>Machine Learning and the Future of Australia's Energy Requirements, Monash University</dd>
+    <dt>Dec 2017 – Feb 2018</dt><dd>Astrophysics research project, Monash School of Physics &amp; Astronomy</dd>
   </dl>
 
   <h2>First-author publications</h2>

@@ -1,24 +1,31 @@
 # Membership & Roles — shown on the home page and the CV.
-# `url` and `roles` are optional; each item in `roles` gets its own line.
+# `url`, `since` (shown on the CV only) and `roles` are optional; each item in `roles` gets its own line.
 - name: MeerKAT Pulsar Timing Array (MPTA)
   url: https://mpta-gw.github.io/
+  since: Mar 2020
   roles:
     - One of the collaboration leaders.
+    - Leading the third data release.
 - name: NANOGrav
   url: https://nanograv.org/
+  since: Jan 2025
   roles:
     - Full member.
     - Leader of the advanced modeling project.
     - Co-lead of the continuous gravitational wave search.
 - name: International Pulsar Timing Array (IPTA)
   url: https://ipta4gw.org/
+  since: Mar 2020
   roles:
     - Co-lead of the Gravitational Wave Analysis working group.
     - One of the leaders of the third data release.
 - name: Parkes Pulsar Timing Array (PPTA)
+  since: Mar 2020
 - name: Gamma-ray Pulsar Timing Array (GPTA)
+  since: Aug 2026
 - name: OzGrav
   url: https://www.ozgrav.org/
+  since: Mar 2020
 - name: VIPER
   url: https://as.vanderbilt.edu/viper/
 - name: SKA Observatory Pulsar Science Working Group
